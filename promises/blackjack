@@ -1,0 +1,24 @@
+# Stretch Assignment Promises - Deck of Cards
+We will use the 'Deck of Cards' API to simulate the start of a game of blackjack with two players and one dealer.
+
+The 'Deck of Cards' API provides an API to work with a virtual deck of cards. With this API we can create a deck of cards, draw cards from that deck, and place the drawn cards into piles. The documentation for this API is located at [deckofcardsapi.com](http://deckofcardsapi.com/).
+
+At the start of a game of blackjack all of the players and the dealer have two cards. In our game of blackjack we will have one dealer, two players, and one deck of cards. We will first need to create a deck of cards. Next, we will then draw a card from the deck and deal it to the correct player (add it to the players pile). The correct order of dealing the cards is player1, player2, and the dealer until each player has two cards.
+
+To solve this exercise, we will use the following URLs from the Deck of Cards API:
+* 'A Brand New Deck' to create a new deck of cards with a unique `deck_id`. `https://deckofcardsapi.com/api/deck/new/`
+* 'Draw a Card' to draw one or more cards from the deck based on the `deck_id`. `https://deckofcardsapi.com/api/deck/<<deck_id>>/draw/?count=<<draw count>>`
+* 'Adding to Piles' to add the drawn cards to the pile of each player and the dealer. `https://deckofcardsapi.com/api/deck/<<deck_id>>/pile/<<pile_name>>/add/?cards=2S`
+* 'Listing Cards in Piles' to list the pile of each player and dealer. `https://deckofcardsapi.com/api/deck/<<deck_id>>/pile/<<pile_name>>/list/`
+
+1. `cd 2-blackjack`
+1. Initialize the `2-blackjack` folder as an npm repository using `npm init`.
+1. Install `axios` using `npm`.
+1. Add a `.gitignore` file that contains `node_modules`.
+1. It is your choice how you want to architect your application. However, you will need to follow the blackjack rules above to deal cards to each player in the correct order (player1, player2, dealer).
+1. Validate that your piles are correct by console logging the pile associated with each player. An unshuffled deck should result in the following piles:
+```
+player1: AS,4S
+player2: 2S,5S
+dealer: 3S,6S
+```
