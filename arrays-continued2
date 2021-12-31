@@ -1,0 +1,23 @@
+/*
+Create a function called allLowerCase that takes a single array of strings as a parameter.
+Use .map to convert every element in the array to lowercase.
+create named f(x) && then use .map
+*/
+
+
+//function allLowerCase(words){
+   // return words.map(word => word.toLowerCase());
+    
+//}
+
+let allLowerCase = words => words.map(word => word.toLowerCase());
+
+
+
+
+console.log(allLowerCase(["HELLO", "WORLD"])); // ["hello", "world"]
+console.log(allLowerCase(["University", "of", "Arkansas"])); // ["university", "of", "arkansas"]
+console.log(allLowerCase(["ABC"])); // ["abc"]
+
+
+
