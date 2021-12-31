@@ -1,0 +1,54 @@
+/*
+Write a function called caughtSpeeding.
+
+You are driving a little too fast, and a police officer stops you. Write code to compute the result, encoded
+as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the result is 0. If speed
+is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your
+birthday -- on that day, your speed can be 5 higher in all cases.
+*/
+
+
+console.log(caughtSpeeding(60, false)); // → 0
+console.log(caughtSpeeding(65, false)); // → 1
+console.log(caughtSpeeding(65, true)); // → 0
+
+//2 parameters, one indicating the speed you were going, the second indicating if it is your birthday or not
+// return will be a 0,1, or 2
+// if speed <= 60 will return 0 unless bday then <= 65
+// if speed >= 61 && <= 80 will return a 1 unless bday then >= 66 && <= 85
+// if speed is >= 81 will return a 2 unless bday then >= 86
+
+//maybe something like ex 1 or 2
+
+function caughtSpeeding(speed, birthday){
+    if(birthday){
+        if (speed <= 65){
+            return 0;
+        }
+        else if(speed >= 66 && speed <= 85){
+            return 1;
+        }
+        else{
+            return 2;
+        }
+    }
+    if(!(birthday)){
+        if (speed <= 60){
+            return 0;
+        }
+        if (speed >= 61 && speed <= 80){
+            return 1;
+        }
+        else{
+            return 2;
+        }
+    }
+}
+
+//fin
+
+//someone online said you can do it this way but i dont understand it bc of the multiple comparison operators...
+
+function caughtSpeeding2(speed, isBirthday) {
+    return (speed - ((isBirthday) ? 5 : 0) > 60) ? (speed - ((isBirthday) ? 5 : 0) > 80) ? 2 : 1 : 0;
+    }
