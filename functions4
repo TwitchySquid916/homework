@@ -1,0 +1,32 @@
+/*
+Write a function called stringTimes. Given a string and a non-negative int n, return a larger string that is
+n copies of the original string.
+*/
+
+console.log(stringTimes("Hi", 2)); // → "HiHi"
+console.log(stringTimes("Hi", 3)); // → "HiHiHi"
+console.log(stringTimes("Hi", 1)); // → "Hi"
+
+//going to have two parameters, first is a string, second is a number
+// multiply the string and combine it together into one string
+// output is a single string no spaces 
+
+function stringTimes(string,number){
+    let s = "";
+
+    for(let i = 0; i < number ; i ++){
+        s += string;
+}
+return s;
+}
+
+console.log(stringTimes("Hi",2));
+
+// Fin
+
+
+// option 2,,,, shorter wayy
+
+function stringTimes2(string,number){
+    return string.repeat(n);
+}
