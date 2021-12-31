@@ -1,0 +1,25 @@
+/*
+Write a function called everyOther.
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+*/
+
+
+console.log(everyOther("Hello")); // → "Hlo"
+console.log(everyOther("Hi")); //  → "H"
+console.log(everyOther("Heeololeo")); //  → "Hello"
+
+//omit every other character in the string
+//use example in notebook 
+
+function everyOther(string){
+    
+    let partial = "";
+    for(let i = 0; i < string.length ; i += 2){
+        partial += string[i];
+    }
+    return partial;
+}
+
+console.log(everyOther("Hello"));
+
+//fin
