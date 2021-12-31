@@ -1,0 +1,10 @@
+/*
+Write a function called getShortest that takes two parameters, an array of strings, and a number.
+Within the function use filter to find the strings whose length are shorter than or equal to the number parameter.
+*/
+
+let getShortest = (words, size) => words.filter(word => word.length <= size);
+
+console.log(getShortest(["a", "ab", "abc", "abcd"], 2)); // --> ["a", "ab"]
+console.log(getShortest(["a", "ab", "abc", "abcd"], 1)); // --> ["a"]
+console.log(getShortest(["a", "ab", "abc", "abcd"], 0)); // --> []
