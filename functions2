@@ -1,0 +1,44 @@
+/*
+Write a function called startHi.
+Given a string, return true if the string starts with "hi" and false otherwise.
+*/
+
+console.log(startHi("hi there")); // → true
+console.log(startHi("hi")); // → true
+console.log(startHi("hello hi")); // → false
+
+// he at the begging is not hi
+//how do i check the characters in the string? 
+// input = one parameter, as a string data type
+// return a boolean data type
+
+
+function startHi(myWord){
+    return (myWord[0] =="h" && myWord[1] =="i" ? true : false)                                           
+}
+
+console.log(startHi("hello hi"))
+
+
+//fin
+
+
+//
+
+
+let size =8;                   /// bc 8 characters on 8 lines
+
+let board = "";                      /// to fill with a "" or # 
+
+for (let y = 0; y < size; y ++) {   /// handles the lines && y axis  [[make some more lines]]
+    for (let x = 0; x < size; x++){  /// handles the characters on a line && x axis,, [[add things to the string]] if true,, 8 characters
+        if ((x + y) % 2 == 0) {             // on the even spaces
+            board += " ";                        // print a space in the string
+        }
+        else{
+            board += "#";                          // odd spaces,, print a # 
+        }
+    }
+    board += "\n";                                // on the handles lines loop,, do the inner loop if outer loop = true,, 8 lines
+}
+console.log(board);                          // Calling The String That We Built Up In Different Ways In The Loops...
