@@ -1,0 +1,87 @@
+/*
+
+1) Create a Shape class that has a constructor that takes a height and width property.
+Add a getArea method/function to the Shape class that simply returns undefined.
+
+2)Create a Rectangle class that extends the Shape class. Write a constructor that takes
+a width and a height and uses super() to call the constructor of the parent Shape class.
+Add a getArea method to the rectangle class that takes no parameters, but returns the area
+of the rectangle.
+
+3)Create a Square class that extends the *Rectangle* class. Write a constructor that takes
+*one* parameter that is used for both the width and the height. Use super() to call the
+constructor of the Rectangle class. Do *not* override the getArea() method. Instead,
+it should be able to use the getArea method from the Rectangle class.
+
+4)Create a Circle class that extends the Shape class. Write a constructor that takes
+one parameter, the diameter of the circle. Use super() to call the constructor of the
+Shape class. Override the getArea() method that returns the area of the circle.
+
+*/
+
+// 1)
+class Shape{
+    constructor(height, width){
+        this.width = width;
+        this.height = height;
+    }
+     getArea(){
+            return undefined;
+        }
+}
+
+//2)
+class Rectangle extends Shape{
+    constructor(height, width){
+        super(height, width);
+    }
+    getArea(){
+        return this.width * this.height;
+    }
+}
+
+//3) 
+class Square extends Rectangle{
+    constructor(width){                                      // needs to set the height & width of rectangle to same value, just width, do it in super()
+        super(width, width);                  // square will pass in one param so one param for constructor but original has 2, so double in the super()
+    }                                                          //  DONT NEED TO CALL GETaREA() BC THEN IT WILL GIVE YOU UNDEFINED bc will run empty f(x)
+}
+
+//4)
+class Circle extends Shape{
+    constructor(diameter){
+        super(diameter, diameter);
+    }
+    getArea(){
+        const radius = this.width /2;  // use this.width (bc already defined) instead of diameter bc we didnt make a this.diameter = diameter under super()
+        return Math.PI * (radius**2);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+let shape = new Shape(2, 2);
+console.log(shape.getArea()); // undefined
+
+let rectangle1 = new Rectangle(2, 4);
+let rectangle2 = new Rectangle(5, 4);
+console.log(rectangle1.getArea()); // 8
+console.log(rectangle2.getArea()); // 20
+
+let square1 = new Square(2);
+let square2 = new Square(3);
+console.log(square1.getArea()); // 4
+console.log(square2.getArea()); // 9
+
+let circle1 = new Circle(2);
+let circle2 = new Circle(3);
+console.log(circle1.getArea()); // 7.0685834705770345
+console.log(circle2.getArea()); // 28.274333882308138
